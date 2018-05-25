@@ -1,5 +1,7 @@
-*{margin:0; padding:0; box-sizing:inherit;}
-body{box-sizing:border-box;}
+
+*{ margin:0; padding:0; box-sizing:inherit; }
+body{ box-sizing:border-box; }
 
 @import 'sections/grid-test';
 @import 'sections/background-clip';
+@import 'sections/utilities';
