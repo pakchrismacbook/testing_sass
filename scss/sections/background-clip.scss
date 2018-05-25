@@ -1,0 +1,7 @@
+.bg-clip{
+  .heading-secondary{
+    background-image:linear-gradient(to right, black, pink);
+    display:inline-block;
+    -webkit-background-clip:text; color:transparent;
+  }
+}
