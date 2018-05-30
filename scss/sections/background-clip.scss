@@ -11,10 +11,12 @@ $shadow:rgba(50,50,50,.3);
       text-shadow:.5rem 1rem 2rem rgba(55,55,55,.3);
     }
   }
-  .row{
-    background-color:inherit;
-    [class^="col-"]{background-color:inherit;}
-  }
+  // .row{
+  //   background-color:inherit;
+  //   &:not(:last-child){ margin-bottom:$gutter-vertical; }
+  //   &::after{clear:both; content:''; display:table;}
+  //   [class^="col-"]{background-color:inherit;}
+  // }
 }
 
 .composition{

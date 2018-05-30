@@ -8,7 +8,6 @@ body {
 
 .row {
   max-width: 71.25rem;
-  background-color: #eee;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 5rem; }
@@ -17,7 +16,6 @@ body {
     content: '';
     display: table; }
   .row [class^="col-"] {
-    background-color: orangered;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 3.75rem; }
@@ -34,6 +32,15 @@ body {
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 3.75rem) / 4) + 2 * 3.75rem); }
 
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-5 {
+  margin-bottom: 5rem; }
+
+.u-margin-top-5 {
+  margin-top: 5rem; }
+
 .bg-clip .heading-secondary {
   background-image: linear-gradient(to right, black, pink);
   display: inline-block;
@@ -43,11 +50,6 @@ body {
   .bg-clip .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1, 1);
     text-shadow: 0.5rem 1rem 2rem rgba(55, 55, 55, 0.3); }
-
-.bg-clip .row {
-  background-color: inherit; }
-  .bg-clip .row [class^="col-"] {
-    background-color: inherit; }
 
 .composition {
   position: relative; }
@@ -74,11 +76,31 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
-.u-center-text {
-  text-align: center; }
+.section-feat {
+  transform: skewY(-7deg); }
+  .section-feat > * {
+    transform: skewY(7deg); }
 
-.u-margin-bottom-5 {
-  margin-bottom: 5rem; }
-
-.u-margin-top-5 {
-  margin-top: 5rem; }
+.card {
+  position: relative;
+  perspective: 150rem;
+  width: 20rem;
+  height: 25rem; }
+  .card__side {
+    background-color: orangered;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; }
+    .card__side-front {
+      color: white; }
+    .card__side-back {
+      background-color: dodgerblue;
+      transform: rotateY(180deg); }
+  .card:hover .card__side-front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side-back {
+    transform: rotateY(0); }
