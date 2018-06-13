@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box; }
+
+.row {
+  max-width: 71.25rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 5rem; }
+  .row::after {
+    clear: both;
+    content: '';
+    display: table; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 3.75rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 3.75rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 3.75rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 3.75rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 3.75rem) / 3) + 3.75rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 3.75rem) / 4) + 3.75rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 3.75rem) / 4) + 2 * 3.75rem); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-5 {
+  margin-bottom: 5rem; }
+
+.u-margin-top-5 {
+  margin-top: 5rem; }
+
+.bg-clip .heading-secondary {
+  background-image: linear-gradient(to right, black, pink);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all .3s; }
+  .bg-clip .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1, 1);
+    text-shadow: 0.5rem 1rem 2rem rgba(55, 55, 55, 0.3); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    height: 10rem;
+    box-shadow: 0 1rem 4rem rgba(50, 50, 50, 0.3);
+    position: absolute;
+    transition: all .4s;
+    outline-offset: .5rem; }
+    .composition__photo-p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo-p2 {
+      left: 4rem;
+      top: 2rem; }
+    .composition__photo-p3 {
+      left: 8rem;
+      top: 6rem; }
+    .composition__photo:hover {
+      transform: scale(1.25);
+      box-shadow: 0 2rem 4rem rgba(50, 50, 50, 0.3);
+      z-index: 20;
+      outline: .5rem solid pink; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
+
+.section-feat {
+  transform: skewY(-7deg); }
+  .section-feat > * {
+    transform: skewY(7deg); }
+
+.card {
+  position: relative;
+  perspective: 150rem;
+  width: 20rem;
+  height: 25rem; }
+  .card__side {
+    background-color: orangered;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; }
+    .card__side-front {
+      background-image: linear-gradient(to right, #ebebeb, papayawhip), url(../../img/cardone.jpg);
+      background-size: cover;
+      background-blend-mode: hard-light; }
+    .card__side-back {
+      background-color: dodgerblue;
+      transform: rotateY(180deg); }
+  .card:hover .card__side-front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side-back {
+    transform: rotateY(0); }

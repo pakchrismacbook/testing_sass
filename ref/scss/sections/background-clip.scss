@@ -1,0 +1,41 @@
+$shadow:rgba(50,50,50,.3);
+
+.bg-clip{
+  .heading-secondary{
+    background-image:linear-gradient(to right, black, pink);
+    display:inline-block;
+    -webkit-background-clip:text; color:transparent;
+    transition:all .3s;
+    &:hover{
+      transform:skewY(2deg) skewX(15deg) scale(1,1);
+      text-shadow:.5rem 1rem 2rem rgba(55,55,55,.3);
+    }
+  }
+  // .row{
+  //   background-color:inherit;
+  //   &:not(:last-child){ margin-bottom:$gutter-vertical; }
+  //   &::after{clear:both; content:''; display:table;}
+  //   [class^="col-"]{background-color:inherit;}
+  // }
+}
+
+.composition{
+  position: relative;
+  &__photo{
+    height:10rem;
+    box-shadow:0 1rem 4rem $shadow;
+    position: absolute;
+    transition:all .4s;
+    outline-offset:.5rem;
+    &-p1{left:0; top:-2rem;}
+    &-p2{left:4rem; top:2rem;}
+    &-p3{left:8rem; top:6rem;}
+    &:hover{
+      transform:scale(1.25);
+      box-shadow:0 2rem 4rem $shadow;
+      z-index:20;
+      outline:.5rem solid pink;
+    }
+  }
+  &:hover &__photo:not(:hover){transform:scale(.9);}
+}
