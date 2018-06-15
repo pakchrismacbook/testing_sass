@@ -1,0 +1,24 @@
+.btn{
+
+  &,&:link,&:visited{
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 40px;
+    border-radius:100px;
+    position:relative;
+    transition:all .2s;
+
+    border:none;
+    cursor:pointer;
+  }
+  &:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+    &::after{ transform:scaleX(1.4) scaleY(1.6); opacity:0; }
+  }
+  &:active,&:focus{
+    outline:none;
+    transform:translateY(-1px);
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+  }
+}

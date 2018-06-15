@@ -1,3 +1,91 @@
 .form-inputs{
+  background-image:linear-gradient(to left, rgb(34, 106, 179), rgb(250, 199, 247));
+  padding:2rem 0;
+
+}
+
+.inputs-content{
+  width:75%;
+  margin:0 auto;
+  background-image:linear-gradient(100deg,
+  rgba(255,255,255,.8) 0%,
+  rgba(255,255,255,.8) 50%,
+  transparent 50%
+  ),url(/../imgs/bg.jpg);
+  background-size:100%; background-position:center;
+  height:500px;
   
+  &__form{
+    width:50%;
+    padding:1.5rem;
+
+    &__input:not(:last-child){margin-bottom:1.25rem;}
+    &__input{
+
+      input{
+        font-size:1.15rem;
+        padding:.75rem 1.25rem;
+        border-radius:7px;
+        border:none;
+        border-bottom:3px solid transparent;
+        width:85%;
+        display:block;
+        transition:all .35s;
+        
+        &::-webkit-input-placeholder{color:rgb(155,155,155)}
+        &:placeholder-shown + .form-label{
+          opacity:0; visibility:hidden;
+          transform:translateY(-30px);
+        }
+
+      }
+      input:focus{
+        outline:none; box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+        border-bottom:3px solid pink;
+        &::-webkit-input-placeholder{color:rgb(60,60,60)}
+        &:invalid{border-bottom:3px solid rgb(245, 130, 130);}
+      }
+      label{
+        font-size:.8rem;
+        margin-left:.75rem;
+        display:block;
+        transition:all .35s;
+      }
+
+    
+    }
+  }
+}
+
+.radio{
+  width:75%; margin:0 auto; padding:2rem 0;
+  
+  &-group{display:block;width:50%; float:left;}
+  &-input{display:none;}
+  &-label{
+    padding-left:45px;
+    position:relative;
+  }
+  &-button{
+    width:30px; height:30px;
+    border:5px solid pink;
+    border-radius:50%;
+    display:inline-block;
+    position:absolute; top:-5px; left:0;
+
+    &::after{
+      content:'';
+      display:block;
+      width:15px; height:15px;
+      border-radius:50%;
+      background-color:pink;
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      opacity:0;
+      transition:opacity .3s ease-in;
+    }
+  }
+  &-input:checked ~ &-label &-button::after{opacity:1;}
+
+  &::after{clear:both; display:table; content:'';}
 }
